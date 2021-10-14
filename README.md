@@ -89,6 +89,46 @@ Os nomes das collections devem começar com um sublinhado ou uma letra e não po
 <h1>Instalação</h1>
 
 
-O MongoDB está disponível em duas edições: Community e Enterprise, sendo mais recomendado fazer o download de uma versão community, já que a mesma é gratuita. O link a seguir disponibiliza diferentes versões para diferentes sistemas operacionais e suas restrições: [Installation](https://docs.mongodb.com/manual/installation/)
+O MongoDB está disponível em duas edições: Community e Enterprise, sendo mais recomendado fazer o download de uma versão community, já que a mesma é gratuita. O link a seguir disponibiliza diferentes versões para diferentes sistemas operacionais e suas restrições: [Installation](https://docs.mongodb.com/manual/installation/).
 
-Em seguida, para que seja possível utilizar a Shell interface do MongoDB, faça o download da ferramenta <i>mongosh</i>, disponível no link a seguir: [mongosh](https://docs.mongodb.com/mongodb-shell/install/)
+Em seguida, para que seja possível utilizar a Shell interface do MongoDB, faça o download da ferramenta <i>mongosh</i>, disponível no link a seguir: [mongosh](https://docs.mongodb.com/mongodb-shell/install/).
+
+Após ambos os downloads, acesse o terminal e faça o run do seguinte comando:
+
+    mongosh
+
+E como resultado temos acesso a interface de linha de comando do mongosh, que conta com alguns detelhes sobre as instalações, contendo as versões instaladas e o Log ID do mongosh:
+
+    Current Mongosh Log ID: 61678f008200fe466d146371
+    Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000
+    Using MongoDB:          5.0.3
+    Using Mongosh:          1.1.0
+    
+    For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+    
+    
+    To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+    You can opt-out by running the disableTelemetry() command.
+    
+    ------
+       The server generated these startup warnings when booting:
+       2021-10-13T22:55:30.057-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+    ------
+    
+    test>
+
+Além disso, quando acessamos a interface do mongosh, inicialmente já temos uma base de test criada por default. Para ver as informações que essa contém, use o comando a seguir:
+
+    show dbs
+
+Por padrão, temos os seguintes resultados a consulta:
+
+admin     41 kB
+config  61.4 kB
+local     41 kB
+
+
+<h2>Criando Um Banco de Dados</h2>
+
+
+
