@@ -123,7 +123,7 @@ Além disso, quando acessamos a interface do mongosh, inicialmente já temos uma
 
 Por padrão, temos os seguintes resultados a consulta:
 
-admin     41 kB
+admin     41 kB\n
 config  61.4 kB
 local     41 kB
 
