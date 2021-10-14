@@ -29,8 +29,16 @@ O valor de um campo pode ser de qualquer tipo suportado pelo BSON data types. Po
        views : NumberLong(1250000)
     }
 
+O exemplo acima conta com os seguintes tipos em suas respectivas chaves:
+
+- _id contém um [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#std-label-objectid)
+- name contém um documento incorporado que contém os campos primeiro e último.
+- birth e death contêm valores do tipo Date
+- views contém um tipo <i>NumberLong</i>
+
 
 <h1>Collection</h1>
+
 
 As collections para o MongoDB são como as tabelas para bancos de dados relacionais. Os documentos em que as informaçõe são registradas são, por sua vez, armanenados em collections:
 
