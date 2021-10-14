@@ -89,10 +89,6 @@ Os nomes das collections devem começar com um sublinhado ou uma letra e não po
 <h1>Instalação</h1>
 
 
-O MongoDB está disponível em duas edições: Community e Enterprise, sendo mais recomendado fazer o download de uma versão community, já que a mesma é gratuita. O link a seguir disponibiliza diferentes versões para diferentes sistemas operacionais e suas restrições:
+O MongoDB está disponível em duas edições: Community e Enterprise, sendo mais recomendado fazer o download de uma versão community, já que a mesma é gratuita. O link a seguir disponibiliza diferentes versões para diferentes sistemas operacionais e suas restrições: [Installation](https://docs.mongodb.com/manual/installation/)
 
-[Installation](https://docs.mongodb.com/manual/installation/)
-
-Em seguida, para que seja possível utilizar a Shell interface do MongoDB, faça o download da ferramenta <i>mongosh</i>, disponível no link a seguir:
-
-[mongosh](https://docs.mongodb.com/mongodb-shell/install/)
+Em seguida, para que seja possível utilizar a Shell interface do MongoDB, faça o download da ferramenta <i>mongosh</i>, disponível no link a seguir: [mongosh](https://docs.mongodb.com/mongodb-shell/install/)
