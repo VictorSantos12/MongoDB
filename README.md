@@ -4,11 +4,11 @@
 <img src="https://img.shields.io/static/v1?label=MongoDb&message=DataBase&color=green&style=for-the-badge&logo=MongoDB"/>
 
 
-O [MongoDB](https://www.mongodb.com/pt-br/what-is-mongodb) é um banco de dados orientado a documentos, NoSQL, desenvolvido e mantido pela MongoDB Inc. Sendo bastante popular por ser uma alternativa as opções mais consolidadas de bancos de dados, especificamente os da Oracle, como SQL e MySQL. O Mongo oferece uma estrutura de armazenamento diferente de seus concorrentes, já que faz uso do popular formato de intercâmbio de dados, o JavaScript Object Notation, popularmente conhecido como Json. Esse formato permite manter armazenado um mapa das informações, chamado de documento, o que torna o processo de comunicação e tratamento dos dados mais simplificado.
+O [MongoDB](https://www.mongodb.com/pt-br/what-is-mongodb) é um banco de dados orientado a documentos, NoSQL, desenvolvido e mantido pela MongoDB Inc que oferece a possibilidade de deployment local e cloud-hosted em diferentes versões, que podem ou não ser gratuitas.
 
-Além disso, o Mongo oferece a possibilidade de deployment local e cloud-hosted, permitindo ter acesso a esses recursos em diferentes versões, que podem ou não ser gratuitas. 
+Sendo bastante popular por ser uma alternativa as opções mais consolidadas de bancos de dados, especialmente os da Oracle, como SQL e MySQL. O Mongo oferece uma estrutura de armazenamento diferente de seus concorrentes, já que faz uso do JavaScript Object Notation, popular formato de intercâmbio de dados, mais conhecido como Json. Esse formato permite manter armazenado um mapa das informações chamado de documento, o que torna o processo de comunicação e tratamento dos dados mais simplificado.
 
-Como já foi dito, os registros no MongoDB seguem o padrão de estrutura do Json, que consiste em um objeto compost de chaves, também chamados de campos, e valores. O valor de um campo pode conter um outro documento Json, um array, que pode conter uma série de outros documentos, ou mesmo outros arrays:
+A estrutura do Json consiste em um objeto compost de chaves, também chamados de campos, e valores. O valor de um campo pode conter um outro documento Json, um array, que pode conter uma série de outros documentos, ou mesmo outros arrays:
 
 <img src="https://user-images.githubusercontent.com/61476935/137230375-5c5714f7-66d4-4ef5-b317-3b052e3440e3.png"/>
 
@@ -31,31 +31,31 @@ O valor de um campo pode ser de qualquer tipo suportado pelo BSON data types. Po
 
 O exemplo acima conta com os seguintes tipos em suas respectivas chaves:
 
-- _id contém um [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#std-label-objectid)
+- _id contém um [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#std-label-objectid).
 - name contém um documento incorporado que contém os campos primeiro e último.
-- birth e death contêm valores do tipo Date
-- views contém um tipo <i>NumberLong</i>
+- birth e death contêm valores do tipo Date.
+- views contém um tipo <i>NumberLong</i>.
 
 
 <h1>Collection</h1>
 
 
-As collections para o MongoDB são como as tabelas para bancos de dados relacionais. Os documentos em que as informaçõe são registradas são, por sua vez, armanenados em collections:
+As collections para o MongoDB são como as tabelas para bancos de dados relacionais. Os documentos em que as informações são registradas são, por sua vez, armazenados em collections:
 
 <img src="https://user-images.githubusercontent.com/61476935/137231179-29d86114-b76b-40c9-903f-5a0a3ab20918.png"/>
 
-Caso uma collection não exista, o MongoDB irá criá-la caso um registro seja feito.
+Caso uma collection não exista, o MongoDB irá criá-la caso um registro seja feito:
 
     db.myNewCollection2.insertOne( { x: 1 } )
     db.myNewCollection3.createIndex( { y: 1 } )
 
-Ambas as operações <i>insertOne()</i> e <i>createIndex()</i> criam suas respectivas collections caso as mesmas já não existam. E para isso, o MongoDB possui alguns parâmetros para que seja possível nomear uma conllection:
+Ambas as operações <i>insertOne()</i> e <i>createIndex()</i> criam suas respectivas collections caso as mesmas já não existam. E para isso, o MongoDB possui alguns parâmetros de nomenclatura:
 
 
 <h2>Restrições de Nomenclatura de Bancos de Dados</h2>
 
 
-Para evitar possíveis conflitos, o MongoDB mantém padrões que tornam a criação de diferentes bancos de dados ou collections não conflitantes. Exemplo:
+Para evitar possíveis conflitos, o MongoDB mantém padrões que tornam a criação de diferentes bancos de dados não conflitantes. Exemplo:
 
     mixedCase = db.getSiblingDB('salesDB')
     lowerCase = db.getSiblingDB('salesdb')
