@@ -31,7 +31,9 @@ Caso uma collection não exista, o MongoDB irá criá-la caso um registro seja f
 
 Ambas as operações <i>insertOne()</i> e <i>createIndex()</i> criam suas respectivas collections caso as mesmas já não existam. E para isso, o MongoDB possui alguns parâmetros para que seja possível nomear uma conllection:
 
-<h2>Restrições de Nomenclatura</h2>
+
+<h2>Restrições de Nomenclatura de Bancos de Dados</h2>
+
 
 Para evitar possíveis conflitos, o MongoDB mantém padrões que tornam a criação de diferentes bancos de dados ou collections não conflitantes. Exemplo:
 
@@ -46,26 +48,20 @@ A operação <i>insertOne()</i> seria bem sucedida, e criaria implicitamente o b
 
 A operação <i>insertOne()</i> tentaria criar a base de dados <i>saledb</i> e seria bloqueada pela restrição de nomenclatura, já que é preciso diferenciar mais que apenas o case quando nomeamos algo no MongoDB. Outras restrições são:
 
+- Para deployments do MongoDB rodando no Windows, nenhuma base de dados pode ser nomeada utilizando os caracteres /\. "$*<>:|? ou ser null.
 
-<h3>Restrições de Nomenclatura no Windows</h3>
+- Para deployments do MongoDB rodando no Unix ou Linux, nenhuma base de dados pode ser nomeada utilizando os caracteres  /\. "$ ou ser null.
 
-
-- Para deployments do MongoDB rodando no Windows, nenhuma base de dados pode ser nomeada utilizando os seguintes caracteres /\. "$*<>:|?
-
-Além disso, a nomenclatura de uma base de dados não pode conter o caracter <i>null</i>.
+- Os nomes dos bancos de dados não podem estar vazios e devem ter menos de 64 caracteres.
 
 
-<h3>Restrições de Nomenclatura no Unix e Linux</h3>
+<h2>Restrições de Nomenclatura de Collections</h2>
 
 
-Para deployments do MongoDB rodando no Unix ou Linux, nenhuma base de dados pode ser nomeada utilizando os seguintes caracteres:
+Os nomes das collections devem começar com um sublinhado ou uma letra e não podem:
 
-    /\. "$
+- Conter $.
+- Ser um string vazio ("").
+- Conter o identifcador null.
+- Iniciar o prefixo system.
 
-E assim como no Windows, a nomenclatura de uma base de dados não pode conter o caracter <i>null</i>.
-
-
-<h3>Comprimento dos nomes do banco de dados</h3>
-
-
-Os nomes dos bancos de dados não podem estar vazios e devem ter menos de 64 caracteres.
