@@ -117,18 +117,45 @@ E como resultado temos acesso a interface de linha de comando do mongosh, que co
     
     test>
 
-Além disso, quando acessamos a interface do mongosh, inicialmente já temos uma base de test criada por default. Para ver as informações que essa contém, use o comando a seguir:
+Além disso, quando acessamos a interface do Mongo Shell, inicialmente já temos uma base test criada por default. Para ver as informações nela contidas, use o comando a seguir:
 
     show dbs
 
 Por padrão, temos os seguintes resultados a consulta:
 
-admin     41 kB\n
-config  61.4 kB
-local     41 kB
+    admin     41 kB
+    config  61.4 kB
+    local     41 kB
+
+admin, config e local são bancos de dados criados por padrão em qualquer DB criado no MongoDB, e são respectivamente resposnsáveis por
 
 
 <h2>Criando Um Banco de Dados</h2>
 
 
+Para criar um novo banco de dados basta utilizar o comando a seguir:
 
+    use <name>
+
+Caso uma base existente já possua o nome usado no comando, a interface do Mongo Shell irá notificá-lo da falha de nomenclatura. Veja um exemplo:
+
+    test> use apk
+    switched to db apk
+    apk> use apk
+    already on db apk
+    apk>
+
+Para deletar um banco de dados, basta usar o comando a seguir:
+
+    db.dropDatabase()
+
+Como resultado, o Shell irá retornar um json declarando que o banco descrito no campo 'dropped' foi excluído:
+
+    { ok: 1, dropped: 'apk' }
+
+
+
+show collections
+
+
+cls (limpar terminal)
