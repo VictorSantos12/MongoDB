@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/static/v1?label=MongoDb&message=DataBase&color=green&style=for-the-badge&logo=MongoDB"/>
 
 
-O MongoDB é um banco de dados orientado a documentos, NoSQL, desenvolvido e mantido pela MongoDB Inc. Sendo bastante popular por ser uma alternativa as opções mais consolidadas de bancos de dados, especificamente os da Oracle, como SQL e MySQL. O Mongo oferece uma estrutura de armazenamento diferente de seus concorrentes, já que faz uso do popular formato de intercâmbio de dados, o JavaScript Object Notation, popularmente conhecido como Json. Esse formato permite manter armazenado um mapa das informações, chamado de documento, o que torna o processo de comunicação e tratamento dos dados mais simplificado.
+O [MongoDB](https://www.mongodb.com/pt-br/what-is-mongodb) é um banco de dados orientado a documentos, NoSQL, desenvolvido e mantido pela MongoDB Inc. Sendo bastante popular por ser uma alternativa as opções mais consolidadas de bancos de dados, especificamente os da Oracle, como SQL e MySQL. O Mongo oferece uma estrutura de armazenamento diferente de seus concorrentes, já que faz uso do popular formato de intercâmbio de dados, o JavaScript Object Notation, popularmente conhecido como Json. Esse formato permite manter armazenado um mapa das informações, chamado de documento, o que torna o processo de comunicação e tratamento dos dados mais simplificado.
 
 Além disso, o Mongo oferece a possibilidade de deployment local e cloud-hosted, permitindo ter acesso a esses recursos em diferentes versões, que podem ou não ser gratuitas. 
 
@@ -17,6 +17,18 @@ As vantagens de usar documentos são:
 - Documentos (objetos) são correspondentes a tipos nativos de várias linguagens de programação.
 - Documentos e matrizes incorporados reduzem a necessidade de junções caras.
 - O esquema dinâmico suporta polimorfismo fluente.
+
+O valor de um campo pode ser de qualquer tipo suportado pelo BSON data types. Por exemplo, o documento a seguir contém valores de diversos tipos:
+
+    var mydoc = {
+       _id: ObjectId("5099803df3f4948bd2f98391"),
+       name: { first: "Alan", last: "Turing" },
+       birth: new Date('Jun 23, 1912'),
+       death: new Date('Jun 07, 1954'),
+       contribs: [ "Turing machine", "Turing test", "Turingery" ],
+       views : NumberLong(1250000)
+    }
+
 
 <h1>Collection</h1>
 
@@ -64,4 +76,6 @@ Os nomes das collections devem começar com um sublinhado ou uma letra e não po
 - Ser um string vazio ("").
 - Conter o identifcador null.
 - Iniciar o prefixo system.
+
+
 
